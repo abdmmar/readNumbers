@@ -3,12 +3,14 @@ from functions import satuan, belasan, puluhan, ratusan, ribuan, puluhanRibu, ra
 # MAIN
 def readNumbers(number):
     """Fungsi untuk membaca angka yang dimasukkan"""
- 
+
     strNumber = str(number)
     lengthNum = len(strNumber)
     firstNumber = int(strNumber[0])
 
-    if(number < 12):
+    if(number == 0):
+        return 'Nol'
+    elif(number < 12):
         angkaSatuan = satuan(strNumber)
         return angkaSatuan
     elif(lengthNum == 2):
@@ -32,7 +34,7 @@ def readNumbers(number):
         stringRatusanRibu = ratusanRibu(strNumber)
         return stringRatusanRibu
 
-result = readNumbers(112310)
+result = readNumbers(0)
 
 print('------------------------------------------')
 print(result)
